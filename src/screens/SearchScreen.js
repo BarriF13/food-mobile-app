@@ -33,7 +33,7 @@ setErrorMessage('OPPSIEE,something went wrong!!');
     onTermSubmit={searchApi}
     />
    {errorMessage? <Text>{errorMessage}</Text>: null} 
-   <Text>We have found {results.length} results</Text>
+   <Text style={{margin: 22}}>We have found {results.length} results</Text>
     </View>
 };
 const styles = StyleSheet.create({});
