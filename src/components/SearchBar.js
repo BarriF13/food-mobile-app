@@ -8,8 +8,8 @@ const SearchBar =({term, onTermChange, onTermSubmit})=>{
     <TextInput
     autoCapital="none"
     autoCorrect={false}
-     style={styles.inputStyle}
-     placeholder="Search"
+    style={styles.inputStyle}
+    placeholder="Search"
     value={term}
     onChangeText={onTermChange}
     onEndEditing={onTermSubmit}
