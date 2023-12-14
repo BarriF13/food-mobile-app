@@ -7,7 +7,12 @@ import ResultsList from '../components/ResultsList';
 const SearchScreen = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, errorMessage]= useResults();
-  console.log(results);
+
+  const filterResultByPrice = (price)=>{
+    return results.filter(results=> {
+      return results.price === price;
+    })
+  };
   return (
     <View>
       <SearchBar
@@ -17,9 +22,9 @@ const SearchScreen = () => {
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <Text>We have found {results.length} results</Text>
-      <ResultsList title={'Cost effective'}/>
-      <ResultsList title={'Fancy'}/>
-      <ResultsList title={'Big spender'}/>
+      <ResultsList results={filterResultByPrice('£')} title={'Cost effective'}/>
+      <ResultsList results={filterResultByPrice('££')}  title={'Fancy'}/>
+      <ResultsList results={filterResultByPrice('£££')} title={'Big spender'}/>
     </View>
   );
 };
