@@ -1,6 +1,8 @@
 import React, { useState} from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import ResultsDetail from './ResultsDetail';
+//withNavigation makes sure this component get access to prop object directly without adding it to the parent component, but we need to wrap it on the export default
+import { withNavigation } from 'react-navigation';
 
 const ResultsList = ({title, results, navigation})=>{
   //console.log(results)
@@ -35,4 +37,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default ResultsList;
+export default withNavigation(ResultsList);
